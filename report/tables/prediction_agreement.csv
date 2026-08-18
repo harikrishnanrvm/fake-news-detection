@@ -1,0 +1,5 @@
+category,count,percentage
+Both models correct,5576,96.2
+Both models wrong,44,0.76
+Only Baseline correct,118,2.04
+Only LSTM correct,58,1.0

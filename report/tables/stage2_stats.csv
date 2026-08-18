@@ -1,0 +1,6 @@
+stage,step,rows_before,rows_after,rows_removed,reason,columns_before,columns_after
+stage2_clean,remove_corrupted_rows,44898,44888,10,"Rows with a non-standard `date` value whose title/text were manually confirmed to contain no real article (bare image/article URLs, or a leaked page-builder template) - see docs/data_cleaning_strategy.md",5,5
+stage2_clean,remove_empty_articles,44888,44257,631,Rows where the `text` field is empty or whitespace-only,5,5
+stage2_clean,deduplicate_articles,44257,38638,5619,"Duplicate `text` values, keeping the first occurrence - see docs/duplicate_analysis.md",5,5
+stage2_clean,strip_reuters_prefix,38638,38638,0,"Removed a leading Reuters wire-service dateline from 20887 rows (text modified in place, no rows removed) - see docs/label_leakage_analysis.md",5,5
+stage2_clean,drop_leakage_columns,38638,38638,0,Dropped `subject` and `date` columns (label leakage) - see docs/label_leakage_analysis.md,5,3

@@ -1,0 +1,7 @@
+category,extra_row_count,percentage_of_total,total_rows,recommended_action
+Exact duplicate rows (all columns identical),209,0.47%,44898,Removed (subsumed by text-based dedup)
+Duplicate article body / different title,655,1.46%,44898,Removed (subsumed by text-based dedup)
+Duplicate title / different article body,392,0.87%,44898,Kept - legitimate republish/update, not an error
+Near duplicates (normalized-fingerprint approximation),698,1.56%,44898,Kept - flagged for manual review only; mostly a recurring column format
+Cross-file duplicates (same text in Fake.csv and True.csv),0,0.00%,44898,None found (1 raw match was a blank/whitespace-only text artifact)
+Recommended action: drop_duplicates on text alone,6252,13.92%,44898,Applied before train/validation/test split

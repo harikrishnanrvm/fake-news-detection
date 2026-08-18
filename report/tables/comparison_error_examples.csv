@@ -1,0 +1,13 @@
+bucket,title,true_label
+Both models wrong,Benghazi Survivor On Hillary Clinton: “I Don’t Think She Has A Soul”,0
+Both models wrong,Obamas donated less to charities in 2015 as income slipped,1
+Both models wrong,Trump booster apologizes for Clinton 'blackface' tweet,1
+Both models wrong,Undercutting the Nation State? Chicago Group Suggests ‘Global Cities’ Should Run World Affairs,0
+Only baseline correct (LSTM's exclusive mistake),Merkel scolds ally to shield coalition talks from weedkiller row,1
+Only baseline correct (LSTM's exclusive mistake), Trump Condemned By Jewish Leaders In Poland After Snubbing Warsaw Ghetto Memorial,0
+Only baseline correct (LSTM's exclusive mistake),MITCH MCCONNELL: The Senate Will Not Take Up Nomination of Merrick Garland,0
+Only baseline correct (LSTM's exclusive mistake),Obama warns Democrats against overconfidence about Clinton victory,1
+Only LSTM correct (baseline's exclusive mistake),FLAMING RINO ALERT! LINDSEY GRAHAM: ‘TRUMP IS GOING TO KILL MY PARTY’,0
+Only LSTM correct (baseline's exclusive mistake),BREAKING: House Republicans Work To Cut Off Federal Funding For Syrian Refugee Resettlement Program,0
+Only LSTM correct (baseline's exclusive mistake),Fake ‘US embassy’ Bust in Ghana Exposes Danger of EU Schengen Deal with Turkey,0
+Only LSTM correct (baseline's exclusive mistake),How Trump is Accelerating the Decline of US Global Influence,0

@@ -1,0 +1,44 @@
+# Byte-compiled Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Datasets — never commit raw or processed data
+dataset/raw/*
+dataset/processed/*
+dataset/external/*
+!dataset/raw/.gitkeep
+!dataset/processed/.gitkeep
+!dataset/external/.gitkeep
+
+# Trained model artifacts
+models/**/*.keras
+models/**/*.h5
+models/**/*.pkl
+
+# Logs
+logs/
+*.log
+
+# Test / type-check caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment / secrets
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

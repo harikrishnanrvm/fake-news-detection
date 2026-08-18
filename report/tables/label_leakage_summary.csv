@@ -1,0 +1,5 @@
+feature,leakage_severity,standalone_rule_accuracy,affected_rows_pct,remove_before_modeling
+subject,Severe (perfect separator),100.000%,100% of rows,Yes
+"(Reuters) tag in text",Severe,99.601%,~99.2% of Real rows carry the tag,"Yes - strip the tag, keep the rest of the text"
+pic.twitter.com in text,Moderate (one-directional),100% precision / 14.8% recall,14.8% of Fake rows,Handled generically via URL removal
+date,Moderate (range + malformed-value signal),100% precision on 6.44% of rows via date-range rule,6.44% of rows classifiable by date range alone,Yes

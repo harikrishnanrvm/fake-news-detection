@@ -1,0 +1,15 @@
+aspect,logistic_regression_baseline,lstm
+Accuracy (this dataset),Higher on every metric (98.24% accuracy / 0.9840 F1 / 0.9979 AUC),Slightly lower on every metric (97.20% accuracy / 0.9745 F1 / 0.9917 AUC)
+Interpretability,"High - every prediction traces to a signed weight per word (Feature Importance analysis, docs/baseline_model_report.md)","Low - no per-word coefficients; would need extra techniques (e.g. attention, not implemented) to explain a single prediction"
+Training speed,"Extremely fast - 0.25 seconds for ~27,000 articles",Slow - about 599 seconds (~10 minutes) for the same data; ~2,440x slower
+Inference speed,"Fast - 0.22 ms/article measured on the test set","Slower - 1.43 ms/article measured on the test set; ~6.4x slower, though still well within real-time API response budgets"
+Computational cost,"Low - trains and predicts on a single CPU core with no special hardware","Higher - benefits from more CPU/GPU resources; training this run still used CPU-only TensorFlow"
+Model size / memory footprint,"Small - ~0.9 MB total (vectorizer + model)","Large - ~28.7 MB total (model + tokenizer), roughly 32x bigger"
+Number of learned parameters,"20,001 (one TF-IDF coefficient per vocabulary word, plus intercept)","2,044,353 (dominated by the 2,000,000-parameter Embedding table)"
+Scalability to more data,"Scales well computationally, but as a linear model its capacity to keep improving with more data plateaus","Neural networks typically have more capacity to keep improving as training data grows, though this was not observed on this dataset's current size"
+Robustness to word order / negation,"None - bag-of-words representation cannot distinguish ""did not confirm"" from ""did confirm""","Structurally capable of using word order, though this dataset did not reward that capability with a higher score"
+Robustness to rare/foreign vocabulary,"Degrades gracefully - a rare word simply gets a small TF-IDF weight","More fragile - rare/foreign words are more likely to fall outside the 20,000-word cap or have a poorly-learned embedding (see error analysis, docs/lstm_model_report.md)"
+Training stability,"Fully deterministic single solver call - no run-to-run epoch variability to manage","Visibly noisy training history (validation loss spike at epoch 2, erratic swings at epochs 9-10) - see report/figures/lstm_training_history.png"
+Ease of deployment,"Simple - only needs scikit-learn + joblib at inference time","Heavier - needs a TensorFlow/Keras runtime, a materially larger dependency footprint"
+Maintainability,"Easy to explain, debug, and retrain quickly during development iteration","Harder to debug (opaque internal state) and slower to iterate on due to long training time"
+Confidence score quality,"Native probability output (predict_proba), used directly for the frontend's confidence display","Native probability output (sigmoid), equally usable for a confidence display"

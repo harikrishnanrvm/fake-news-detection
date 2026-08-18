@@ -1,0 +1,41 @@
+{
+  "algorithm": "LSTM",
+  "architecture": [
+    "Embedding(input_dim=20000, output_dim=100)",
+    "SpatialDropout1D(0.2)",
+    "LSTM(64)",
+    "Dropout(0.3)",
+    "Dense(32, activation='relu')",
+    "Dense(1, activation='sigmoid')"
+  ],
+  "tokenizer_params": {
+    "vocab_size": 20000,
+    "oov_token": "<OOV>",
+    "max_sequence_length": 300,
+    "actual_vocabulary_size": 96250
+  },
+  "training_params": {
+    "batch_size": 64,
+    "max_epochs": 10,
+    "early_stopping_patience": 3,
+    "optimizer": "adam",
+    "loss": "binary_crossentropy"
+  },
+  "random_seed": 42,
+  "dataset_source": "D:\\sem6\\MajorProject\\fake-news-detection\\dataset\\processed\\03_preprocessed.csv",
+  "text_column": "lstm_text",
+  "trained_at_utc": "2026-07-19T18:24:58.431861+00:00",
+  "test_set_metrics": {
+    "accuracy": 0.9720496894409938,
+    "precision": 0.9757174392935982,
+    "recall": 0.9732620320855615,
+    "f1_score": 0.9744881889763779
+  },
+  "test_set_auc": 0.991704973518059,
+  "epochs_completed": 10,
+  "best_val_loss": 0.10996846854686737,
+  "best_val_accuracy": 0.9703243374824524,
+  "train_rows": 27046,
+  "val_rows": 5796,
+  "test_rows": 5796
+}

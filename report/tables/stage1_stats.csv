@@ -1,0 +1,2 @@
+stage,step,rows_before,rows_after,rows_removed,reason,columns_before,columns_after
+stage1_combine,combine_fake_and_true,44898,44898,0,"Concatenated Fake.csv (label=0) and True.csv (label=1) and added a label column; no rows removed, no cleaning applied",4,5
